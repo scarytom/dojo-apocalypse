@@ -1,0 +1,4 @@
+#!/bin/sh
+workspace_dir="$( cd "$( dirname "$0" )" && pwd )"
+cd $workspace_dir
+

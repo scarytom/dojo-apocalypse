@@ -4,6 +4,7 @@ cd $workspace_dir
 
 exec_time="$(date --rfc-3339=seconds)"
 
-git init
+git init -q
 git add .
-git commit -m "Sexec_time"
+git commit -q -m "auto at $exec_time" --author="dojo <email@example.com>"
+

@@ -2,5 +2,17 @@
 workspace_dir="$( cd "$( dirname "$0" )" && pwd )"
 cd $workspace_dir
 
-./commit
+if test -e .git/
+then
+  git checkout -f default
+else
+  git init -q
+fi
+
+git config user.name "dojo"
+git config user.email "email@example.com"
+
+git commit -q -m "beginning at $exec_time"
+git checkout -f -b "$(date +%s)" HEAD
+
 echo "# \n# Beginning the apocalyse workspace at $workspace_dir \n# "

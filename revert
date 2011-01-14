@@ -4,9 +4,13 @@ cd $workspace_dir
 
 exec_time="$(date --rfc-3339=seconds)"
 
-
 git add .
-git commit -q -m "revert at $exec_time" --author="dojo <email@example.com>"
-git checkout -f -b "$(date +%s)" HEAD^ 
+status="$(git status --porcelain)"
 
+if test -n $status
+then
+  git commit -q -m "revert at $exec_time"
+  git checkout -f -b "$(date +%s)" HEAD^
+fi
 
+git checkout -f HEAD

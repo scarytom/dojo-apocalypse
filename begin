@@ -15,9 +15,9 @@ echo "$(date +%s)" >> .beginning
 
 git config user.name "dojo"
 git config user.email "email@example.com"
-git add .
+git add -f -A .
 git commit -q -m "beginning at $exec_time"
 
 git checkout -q -f -b "$(date +%s)" HEAD
 
-echo "# \n# Beginning the apocalyse workspace at $workspace_dir \n# "
+echo "# \n# Beginning the apocalypse workspace at $workspace_dir \n# "

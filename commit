@@ -4,5 +4,5 @@ cd $workspace_dir
 
 exec_time="$(date --rfc-3339=seconds)"
 
-git add .
+git add -f -A .
 git commit -q -m "commit at $exec_time"

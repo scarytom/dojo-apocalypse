@@ -6,7 +6,7 @@ exec_time="$(date --rfc-3339=seconds)"
 
 if test -e .git/
 then
-  git checkout -f default
+  git checkout -q -f default
 else
   git init -q
 fi
@@ -18,6 +18,6 @@ git config user.email "email@example.com"
 git add .
 git commit -q -m "beginning at $exec_time"
 
-git checkout -f -b "$(date +%s)" HEAD
+git checkout -q -f -b "$(date +%s)" HEAD
 
 echo "# \n# Beginning the apocalyse workspace at $workspace_dir \n# "

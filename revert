@@ -6,11 +6,11 @@ exec_time="$(date --rfc-3339=seconds)"
 
 git add .
 status="$(git status --porcelain)"
-
-if test -n $status
+echo "$status"
+if test -n "$status"
 then
   git commit -q -m "revert at $exec_time"
-  git checkout -f -b "$(date +%s)" HEAD^
+  git checkout -q -f -b "$(date +%s)" HEAD^
 fi
 
-git checkout -f HEAD
+git checkout -q -f HEAD

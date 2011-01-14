@@ -2,6 +2,8 @@
 workspace_dir="$( cd "$( dirname "$0" )" && pwd )"
 cd $workspace_dir
 
+exec_time="$(date --rfc-3339=seconds)"
+
 if test -e .git/
 then
   git checkout -f default

@@ -11,7 +11,7 @@ else
   git init -q
 fi
 
-echo "$(date +%s)" >> .beggining
+echo "$(date +%s)" >> .beginning
 
 git config user.name "dojo"
 git config user.email "email@example.com"

@@ -2,3 +2,11 @@
 workspace_dir="$( cd "$( dirname "$0" )" && pwd )"
 cd $workspace_dir
 
+exec_time="$(date --rfc-3339=seconds)"
+
+
+git add .
+git commit -q -m "revert at $exec_time" --author="dojo <email@example.com>"
+git checkout -f -b "$(date +%s)" HEAD^ 
+
+

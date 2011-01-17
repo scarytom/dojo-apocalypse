@@ -1,8 +1,17 @@
 #!/bin/sh
 workspace_dir="$( cd "$( dirname "$0" )" && pwd )"
 cd $workspace_dir
+export GIT_DIR=./.apocalypse
 
 exec_time="$(date --rfc-3339=seconds)"
+
+./runtests
+if test $? -eq 0
+then
+  echo "hi"
+else
+  echo "bye"
+fi
 
 git add -f -A .
 git commit -q -m "commit at $exec_time"

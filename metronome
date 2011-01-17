@@ -1,0 +1,10 @@
+#!/bin/sh
+workspace_dir="$( cd "$( dirname "$0" )" && pwd )"
+cd $workspace_dir
+export GIT_DIR=./.apocalypse
+
+while :
+do
+  sleep 5
+  ./revert
+done

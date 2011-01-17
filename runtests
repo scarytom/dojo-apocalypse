@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# All this script should do is run the tests and return non-zero if any fail.
+
+ant

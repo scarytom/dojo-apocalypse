@@ -1,6 +1,7 @@
 #!/bin/sh
 workspace_dir="$( cd "$( dirname "$0" )" && pwd )"
 cd $workspace_dir
+export GIT_DIR=./.apocalypse
 
 exec_time="$(date --rfc-3339=seconds)"
 

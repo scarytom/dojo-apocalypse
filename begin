@@ -3,8 +3,6 @@ workspace_dir="$( cd "$( dirname "$0" )" && pwd )"
 cd $workspace_dir
 export GIT_DIR=./.apocalypse
 
-exec_time="$(date --rfc-3339=seconds)"
-
 if test -e .apocalypse/
 then
   git checkout -q -f default
@@ -17,7 +15,7 @@ echo "$(date +%s)" > .beginning
 git config user.name "dojo"
 git config user.email "email@example.com"
 git add -f -A .
-git commit -q -m "beginning at $exec_time"
+git commit -q -m "beginning"
 
 git checkout -q -f -b "$(date +%s)" HEAD
 # ./metronome &

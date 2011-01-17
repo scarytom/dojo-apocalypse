@@ -3,14 +3,11 @@ workspace_dir="$( cd "$( dirname "$0" )" && pwd )"
 cd $workspace_dir
 export GIT_DIR=./.apocalypse
 
-exec_time="$(date --rfc-3339=seconds)"
-
 git add -f -A .
-status="$(git status --porcelain)"
-echo "$status"
-if test -n "$status"
+
+if test -n "$(git status --porcelain)"
 then
-  git commit -q -m "revert at $exec_time"
+  git commit -q -m "revert"
   git checkout -q -f -b "$(date +%s)" HEAD^
 fi
 

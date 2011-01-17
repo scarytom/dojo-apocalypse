@@ -3,15 +3,12 @@ workspace_dir="$( cd "$( dirname "$0" )" && pwd )"
 cd $workspace_dir
 export GIT_DIR=./.apocalypse
 
-exec_time="$(date --rfc-3339=seconds)"
-
 ./runtests
 if test $? -eq 0
 then
-  echo "hi"
+  echo "$(date +%s)" > .beginning
+  git add -f -A .
+  git commit -q -m "commit"
 else
-  echo "bye"
+  echo "Tests Failed, so no check-in for you!"
 fi
-
-git add -f -A .
-git commit -q -m "commit at $exec_time"
